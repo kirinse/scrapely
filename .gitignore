@@ -8,3 +8,4 @@ scrapely.egg-info
 # coverage reports
 .coverage
 .coverage.*
+.idea

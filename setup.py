@@ -13,6 +13,7 @@ try:
     include_dirs = [np.get_include()]
 except ImportError:
     include_dirs = []
+print('-------------------->', include_dirs)
 extensions = [
     Extension("scrapely._htmlpage",
               ["scrapely/_htmlpage%s" % ext],

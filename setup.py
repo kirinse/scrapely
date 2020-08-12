@@ -10,12 +10,10 @@ IS_PYPY = platform.python_implementation() == 'PyPy'
 ext = '.pyx' if USE_CYTHON else '.c'
 try:
     import numpy as np
-    print('--------------->', np.get_include())
     include_dirs = [np.get_include()]
-except ImportError as error:
-    print("------->" + error.__class__.__name__ + ": " + error.__str__())
+except ImportError:
     include_dirs = []
-
+print('-------------------->', include_dirs)
 extensions = [
     Extension("scrapely._htmlpage",
               ["scrapely/_htmlpage%s" % ext],
@@ -55,7 +53,6 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Text Processing :: Markup :: HTML',
     ],
-    setup_requires=["numpy"],
     install_requires=['numpy', 'w3lib', 'six'],
     extras_require={
         'speedup': ['cython']

@@ -12,8 +12,8 @@ try:
     import numpy as np
     print('--------------->', np.get_include())
     include_dirs = [np.get_include()]
-except ImportError:
-    print('----------->', ImportError)
+except ImportError as error:
+    print("------->" + error.__class__.__name__ + ": " + error.__str__())
     include_dirs = []
 
 extensions = [

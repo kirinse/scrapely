@@ -55,6 +55,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Text Processing :: Markup :: HTML',
     ],
+    setup_requires=["numpy"],
     install_requires=['numpy', 'w3lib', 'six'],
     extras_require={
         'speedup': ['cython']

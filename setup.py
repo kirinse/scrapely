@@ -10,10 +10,12 @@ IS_PYPY = platform.python_implementation() == 'PyPy'
 ext = '.pyx' if USE_CYTHON else '.c'
 try:
     import numpy as np
+    print('--------------->', np.get_include())
     include_dirs = [np.get_include()]
 except ImportError:
+    print('----------->', ImportError)
     include_dirs = []
-print('-------------------->', include_dirs)
+
 extensions = [
     Extension("scrapely._htmlpage",
               ["scrapely/_htmlpage%s" % ext],

@@ -9,3 +9,4 @@ scrapely.egg-info
 .coverage
 .coverage.*
 .idea
+/venv
